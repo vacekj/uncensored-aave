@@ -31,4 +31,5 @@ module.exports = withBundleAnalyzer({
   // assetPrefix: "./",
   trailingSlash: true,
   pageExtensions,
+  basePath: '/apps/aave',
 });

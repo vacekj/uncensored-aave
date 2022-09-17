@@ -17,53 +17,15 @@ const WalletRow = ({ walletName, walletType }: WalletRowProps) => {
 
   const getWalletIcon = (walletType: WalletType) => {
     switch (walletType) {
-      case WalletType.INJECTED:
-        return (
-          <img
-            src={`/icons/wallets/browserWallet.svg`}
-            width="24px"
-            height="24px"
-            alt={`browser wallet icon`}
-          />
-        );
       case WalletType.WALLET_CONNECT:
         return (
           <img
-            src={`/icons/wallets/walletConnect.svg`}
+            src={`/apps/aave/icons/wallets/walletConnect.svg`}
             width="24px"
             height="24px"
             alt={`browser wallet icon`}
           />
         );
-      case WalletType.WALLET_LINK:
-        return (
-          <img
-            src={`/icons/wallets/coinbase.svg`}
-            width="24px"
-            height="24px"
-            alt={`browser wallet icon`}
-          />
-        );
-      case WalletType.TORUS:
-        return (
-          <img
-            src={`/icons/wallets/torus.svg`}
-            width="24px"
-            height="24px"
-            alt={`browser wallet icon`}
-          />
-        );
-      case WalletType.FRAME:
-        return (
-          <img
-            src={`/icons/wallets/frame.svg`}
-            width="24px"
-            height="24px"
-            alt={`browser wallet icon`}
-          />
-        );
-      default:
-        return null;
     }
   };
 
@@ -133,22 +95,10 @@ export const WalletSelector = () => {
         </Alert>
       )}
       <WalletRow
-        key="browser_wallet"
-        walletName="Browser wallet"
-        walletType={WalletType.INJECTED}
-      />
-      <WalletRow
         key="walletconnect_wallet"
         walletName="WalletConnect"
         walletType={WalletType.WALLET_CONNECT}
       />
-      <WalletRow
-        key="walletlink_wallet"
-        walletName="Coinbase"
-        walletType={WalletType.WALLET_LINK}
-      />
-      <WalletRow key="torus_wallet" walletName="Torus" walletType={WalletType.TORUS} />
-      <WalletRow key="frame_wallet" walletName="Frame" walletType={WalletType.FRAME} />
       <Typography variant="description" sx={{ mt: '22px', mb: '30px', alignSelf: 'center' }}>
         <Trans>
           Need help connecting a wallet?{' '}
